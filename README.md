@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Full-Stack Boilerplate
+
+This is a boilerplate project that provides a solid foundation for building modern web applications with a robust tech stack.
+
+## Tech Stack
+
+### Frontend
+
+- **TypeScript**: For type safety and improved code maintainability.
+- **React**: For building a component-based, interactive user interface.
+- **Next.js**: For server-side rendering, routing, and API routes.
+- **Tailwind CSS**: For rapid UI development and responsive styling.
+- **Clerk**: For user authentication and management.
+- **Zod**: For runtime data validation and schema definition.
+
+### Backend
+
+- **Golang**: For building a performant and scalable API server.
+- **Supabase (PostgreSQL)**: As the database, providing a managed PostgreSQL instance with features like authentication and storage.
+- **Drizzle ORM**: For type-safe database interactions.
+- **Zod (Go port or similar)**: For validating incoming data from the frontend.
+- **Stripe**: For handling payment processing.
+
+## Project Structure
+
+\`\`\`
+├── frontend/               # Next.js frontend application
+│   ├── app/                # App Router pages and layouts
+│   ├── components/         # React components
+│   ├── lib/                # Utility functions and shared code
+│   ├── public/             # Static assets
+│   └── ...
+├── backend/                # Golang API server
+│   ├── cmd/                # Application entry points
+│   ├── internal/           # Internal packages
+│   ├── pkg/                # Reusable packages
+│   └── ...
+└── README.md               # Project documentation
+\`\`\`
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js 18+ and npm/yarn/pnpm
+- Go 1.20+
+- Supabase account
+- Clerk account
+- Stripe account
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Setup Instructions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone this repository
+2. Set up environment variables (see `.env.example` files in both frontend and backend directories)
+3. Install frontend dependencies:
+   \`\`\`bash
+   cd frontend
+   npm install
+   \`\`\`
+4. Install backend dependencies:
+   \`\`\`bash
+   cd backend
+   go mod tidy
+   \`\`\`
+5. Start the development servers:
+   - Frontend: `npm run dev` in the frontend directory
+   - Backend: `go run cmd/api/main.go` in the backend directory
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features
 
-## Learn More
+- User authentication with Clerk
+- Database interactions with Drizzle ORM
+- Type-safe API requests with Zod validation
+- Payment processing with Stripe
+- Responsive UI with Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
